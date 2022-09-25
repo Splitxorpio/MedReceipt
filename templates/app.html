@@ -5,11 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App - MedReceipt</title>
-    <link rel="stylesheet" href="../static/style.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-    <div class="container">
-      
+    <div class="container" style="">
+				<h3>You are at risk of:</h3>
+      	<h1 style="">{{return_list[0]}}</h1>
+				<h2 style="width: 50%; text-align: center; font-size: 15px">{{return_list[1]}}</h2>
+				<br>
+				<h3>Precautions to take:</h3>
+				<ol>
+					{%if return_list[2][0] != nan%}
+					<li>{{return_list[2][0]}}</li>	
+					{%endif%}
+					{%if return_list[2][1] != nan%}
+					<li>{{return_list[2][1]}}</li>	
+					{%endif%}
+					{%if return_list[2][2] != nan%}
+					<li>{{return_list[2][2]}}</li>	
+					{%endif%}
+					{%if return_list[2][3] != nan%}
+					<li>{{return_list[2][3]}}</li>		
+					{%endif%}
+				</ol>
+			<br>
+				<div style="text-align: left;">
+					{%for p in receipt%}
+						
+						<p style="font-family: Courier New;">{{p}}</p>
+					{%endfor%}
+					<br>
+				</div>
+
+				<form action="/api/forwardtomobile">
+					<input type="hidden" value="" name="{{receipt}}">
+					<input class="button-info" type="submit" value="Text Me An Invoice">
+					<a href="https://medreceipt.arnavpandey722.repl.co/" class="button-info">Go Back</a>
+				</form>
     </div>
   </body>
 </html>

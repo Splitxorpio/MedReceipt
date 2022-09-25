@@ -64,14 +64,14 @@
         <form action="/api/model" class="rowt">
           <fieldset style="padding: 5px;">
           <legend><h1>Choose Your Symptoms</h1></legend>
-            {%for s in symptoms%}
+            {%for i in range(lenght)%}
               <div>
-                <input type="checkbox" id="{{s}}" name="{{s}}" value="on">
-                <label for="{{s}}">{{s}}</label>
+                <input data-aos="fade-in" data-aos-duration="300" data-aos-delay="{{i}}"  type="checkbox" id="{{symptoms[i]}}" name="{{symptoms[i]}}" value="on" style="">
+                <label data-aos="fade-left" data-aos-duration="200" data-aos-delay="{{i}}" style="font-size: 15px;" for="{{symptoms[i]}}">{{symptoms[i]}}</label>
               </div>
             {%endfor%}
             <br>
-            <input style="width: 100%;" type="submit">
+            <input style="width: 100%; padding: 5px; background-color: white;" type="submit">
           </fieldset>
         </form>
       </div>

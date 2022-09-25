@@ -59,6 +59,12 @@ section{
   color: black;
   margin: 5px;
   background-color: #E4F4FD;
+	transition: 0.45s;
+}
+.button-info:hover{
+	transform: scale(1.05);
+	transition: 0.45s;
+	cursor: pointer;
 }
 .card{
   width: 20%;
