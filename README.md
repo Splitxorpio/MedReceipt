@@ -1,5 +1,6 @@
 # MedReceipt
 Your goto AI computer for diagnosis! It is accurate, reliable, and fast!
+Try it out here: https://medreceipt.arnavpandey722.repl.co/
 
 # Inspiration
 Our inspiration for the project was based on the challenge that is involved with going to the doctor just for them to tell you that you have the Common Cold and there was nothing they could do to help you, or if you are going online to check your symptoms and you get nonsensical results compared to what you actually have (you put in symptoms for common cold and you get brain cancer). With MedReceipt you can simply put in your symptoms and receive a accurate and fast diagnosis and suggested actions without even leaving your house, saving valuable time and money!
