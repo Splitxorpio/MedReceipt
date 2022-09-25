@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+<!-- 		<script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>MedReceipt</title>
+  </head>
+  <body style="">
+    <section id="main">
+      <div class="container">
+        <div class="row bg">
+            <div class="one-of-two">
+              <div class="container">
+                <img src="https://tinywow.com/results/2022-09-24_19-54/image_remove_bg/QtSEo6bLWpz13u2k/tinywow_Untitled%20design%20(3)_5910474.png" style="width: 150px; height: 150px;" alt="">
+                <h1 style="font-size: 45px;">MedReceipt</h1>
+                <p style="font-size: 30px">Your go-to AI for symptoms</p>
+                <a href="#info" class="button-info">More Info</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section id="info">
+      <div class="container">
+        <div class="row" style="gap: 10px;">
+          <div class="card" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="0">
+            <img src="https://i0.wp.com/statisticsbyjim.com/wp-content/uploads/2021/09/target.png?resize=300%2C291&ssl=1" alt="" style="width: 150px; height: 150px; margin-bottom: 10px;">
+            <h1>Accurate</h1>
+            <p>The hyperaccurate AI is supported by state of the art APIs such as Wolfram|Alpha.</p>
+            <br>
+            <a href="#input" class="button-info">Start Today!</a>
+          </div>
+          <div class="card" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="100">
+            <img src="https://icon-library.com/images/reliable-icon/reliable-icon-4.jpg" alt="" style="width: 150px; height: 150px; margin-bottom: 10px;">
+            <h1>Reliable</h1>
+            <p>MedReceipt's state of the art AI uses basic information to determine a diagnosis.</p>
+            <br>
+            <a href="#input" class="button-info">Start Today!</a>
+          </div>
+          <div class="card" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200">
+            <img src="https://static.thenounproject.com/png/316759-200.png" alt="" style="width: 150px; height: 150px; margin-bottom: 10px;">
+
+            <h1>Fast</h1>
+            <p>Receive detailed information about your diagnosis in a matter of seconds!</p>
+            <br>
+            <a href="#input" class="button-info">Start Today!</a>
+          </div>
+          <div class="card" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300">
+            <img src="https://static.thenounproject.com/png/4691030-200.png" alt="" style="width: 150px; height: 150px; margin-bottom: 10px;">
+            <h1>Friendly</h1>
+            <p>Receive results in a simple, stress-free environment!</p>
+            <br>
+            <a href="#input" class="button-info">Start Today!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="input">
+      <div class="container">
+        <form action="/api/model" class="rowt">
+          <fieldset style="padding: 5px;">
+          <legend><h1>Choose Your Symptoms</h1></legend>
+            {%for s in symptoms%}
+              <div>
+                <input type="checkbox" id="{{s}}" name="{{s}}" value="on">
+                <label for="{{s}}">{{s}}</label>
+              </div>
+            {%endfor%}
+            <br>
+            <input style="width: 100%;" type="submit">
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </body>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</html>
